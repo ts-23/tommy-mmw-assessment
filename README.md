@@ -8,7 +8,7 @@ This project is organised as a **Monorepo** using **pnpm workspaces** and **Turb
 ### Project Structure
 - `apps/`: Contains the deployable applications.
   - `mark-my-words`: The main Pokemon Data Processor service.
-- `packages/`: Contains shared code (libraries, shared UI components, utilities) that can be imported by any application in the `apps/` folder. This promotes code reuse and consistency.
+- `packages/`: Contains shared code (libraries, shared UI components, utilities) that can be imported by applications or packages. This promotes code reuse and consistency.
 
 ## Getting Started
 
