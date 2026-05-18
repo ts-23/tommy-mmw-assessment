@@ -1,0 +1,1 @@
+# Placeholder for the shared UI component library (part of design system) for Frontend scalability.
