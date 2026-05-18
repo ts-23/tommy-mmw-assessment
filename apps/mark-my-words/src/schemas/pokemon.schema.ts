@@ -1,17 +1,15 @@
 import { z } from 'zod';
+import { parseCommaSeparatedString } from '@markmywords/toolkit';
 import { ERROR_MESSAGES } from './errors.js';
 
+// Query Parameters Schema
 export const PokemonTeamQuerySchema = z.object({
-  names: z.string().transform((val) => {
-    const names = val.split(',').map(n => n.trim().toLowerCase()).filter(Boolean);
-    return names;
-  }).pipe(
+  names: z.string().transform(parseCommaSeparatedString).pipe(
     z.array(z.string())
       .min(1, ERROR_MESSAGES.POKEMON.TEAM_MIN)
       .max(6, ERROR_MESSAGES.POKEMON.TEAM_MAX)
   )
 });
-
 export type PokemonTeamQuery = z.infer<typeof PokemonTeamQuerySchema>;
 
 // PokeAPI Response Slice Schema (to type the fetch result)

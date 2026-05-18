@@ -1,5 +1,5 @@
 {
-  "name": "@homebase/toolkit",
+  "name": "@markmywords/toolkit",
   "version": "1.0.0",
   "main": "./dist/index.umd.js",
   "module": "./dist/index.mjs",
@@ -12,12 +12,9 @@
     }
   },
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && tsc --emitDeclarationOnly",
     "dev": "vite build --watch",
     "test": "vitest run"
-  },
-  "dependencies": {
-    "@internationalized/date": "^3.5.2"
   },
   "devDependencies": {
     "typescript": "^5.4.0",
